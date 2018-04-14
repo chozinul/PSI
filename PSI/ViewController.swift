@@ -132,7 +132,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
         if let annotationV = annotationView as! AnnotationView? {
             annotationV.showTitle(title: annotation.title!!)
             annotationV.showSubtitle(title: annotation.subtitle!!)
-            annotationV.showDivider()
         }
         
         

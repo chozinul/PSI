@@ -8,11 +8,11 @@ target 'PSI' do
   # Pods for PSI
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
+  
 
   target 'PSITests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Nimble', '~> 6.0.0'
   end
 
 end
