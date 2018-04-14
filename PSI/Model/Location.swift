@@ -8,10 +8,18 @@
 
 import UIKit
 import ObjectMapper
+import CoreLocation
 
 class Location: Mappable {
     var latitude:Double?
     var longitude:Double?
+    
+    func getCLLocation() -> CLLocationCoordinate2D? {
+        guard let latitude = latitude, let longitude = longitude else {
+            return nil
+        }
+        return CLLocationCoordinate2DMake(latitude, longitude)
+    }
     
     required init?(map: Map){
         

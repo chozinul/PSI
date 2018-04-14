@@ -33,4 +33,21 @@ class PSITests: XCTestCase {
         }
     }
     
+    func testDateToString() {
+        let str = "2018-04-15T00:00:00+08:00"
+        let date = Date(fromString: str)
+        if let strResult = date?.formatterString() {
+            XCTAssertEqual(str, strResult)
+        }else
+        {
+            XCTFail()
+        }
+        
+    }
+    
+    func testStringToDate() {
+        let str = "2018-04-15T00:00:00+08:00"
+        let date = Date(fromString: str)
+        XCTAssertNotNil(date);
+    }
 }

@@ -15,6 +15,25 @@ class Item: Mappable {
     var updateTimestamp:String?
     var readings:Readings?
     
+    func getTimestamp() -> Date? {
+        guard let timestamp = timestamp else {
+            return nil
+        }
+        return Date(fromString: timestamp);
+    }
+    
+    func getUpdateTimestamp() -> Date? {
+        guard let updateTimestamp = updateTimestamp else {
+            return nil
+        }
+        return Date(fromString: updateTimestamp);
+    }
+    
+    func getUpdateTimestampString() -> String? {
+        let date = getUpdateTimestamp()
+        return date?.displayable()
+    }
+    
     required init?(map: Map){
         
     }

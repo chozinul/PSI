@@ -22,6 +22,8 @@
 		C10FE02D208238FA00E06D08 /* Readings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FE02C208238FA00E06D08 /* Readings.swift */; };
 		C10FE02F20823A5300E06D08 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FE02E20823A5300E06D08 /* Item.swift */; };
 		C10FE03120823B3600E06D08 /* APIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FE03020823B3600E06D08 /* APIInfo.swift */; };
+		C10FE034208241A400E06D08 /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FE033208241A400E06D08 /* DateExtention.swift */; };
+		C10FE0362082490700E06D08 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FE0352082490700E06D08 /* AnnotationView.swift */; };
 		CE796C67910CB23103904B35 /* Pods_PSITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62F375354A05F59C0077E4 /* Pods_PSITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		C10FE02C208238FA00E06D08 /* Readings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Readings.swift; sourceTree = "<group>"; };
 		C10FE02E20823A5300E06D08 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C10FE03020823B3600E06D08 /* APIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInfo.swift; sourceTree = "<group>"; };
+		C10FE033208241A400E06D08 /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
+		C10FE0352082490700E06D08 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		F51BC1D75CC242A7B0E9273C /* Pods-PSITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSITests/Pods-PSITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA99B95A3235A559016C5B2C /* Pods-PSITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSITests/Pods-PSITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,8 @@
 		C10FDFFF20822C0300E06D08 /* PSI */ = {
 			isa = PBXGroup;
 			children = (
+				C10FE03A2082690100E06D08 /* CustomView */,
+				C10FE0322082417B00E06D08 /* Util */,
 				C10FE0272082350200E06D08 /* Network */,
 				C10FE02020822ED300E06D08 /* Model */,
 				C10FE00020822C0300E06D08 /* AppDelegate.swift */,
@@ -146,6 +152,22 @@
 				C10FE0282082351C00E06D08 /* PSIApi.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C10FE0322082417B00E06D08 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C10FE033208241A400E06D08 /* DateExtention.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		C10FE03A2082690100E06D08 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C10FE0352082490700E06D08 /* AnnotationView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		DA89331AD034089FB1D37A03 /* Frameworks */ = {
@@ -334,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10FE0262082347400E06D08 /* Psi.swift in Sources */,
+				C10FE034208241A400E06D08 /* DateExtention.swift in Sources */,
 				C10FE02F20823A5300E06D08 /* Item.swift in Sources */,
 				C10FE02B2082386900E06D08 /* Reading.swift in Sources */,
 				C10FE02220822F0900E06D08 /* Region.swift in Sources */,
@@ -342,6 +365,7 @@
 				C10FE0292082351C00E06D08 /* PSIApi.swift in Sources */,
 				C10FE0242082339900E06D08 /* Location.swift in Sources */,
 				C10FE02D208238FA00E06D08 /* Readings.swift in Sources */,
+				C10FE0362082490700E06D08 /* AnnotationView.swift in Sources */,
 				C10FE00120822C0300E06D08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,11 +530,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T73B6L4GQ;
 				INFOPLIST_FILE = PSI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chozinul.ios.PSI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chozinul.PSI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,11 +550,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T73B6L4GQ;
 				INFOPLIST_FILE = PSI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chozinul.ios.PSI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chozinul.PSI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

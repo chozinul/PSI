@@ -16,7 +16,17 @@ class PSIApi: NSObject {
     
     static func GetPSI(completion:((Psi?)->())?) {
         let URL = baseURL
-        Alamofire.request(URL).responseObject { (response: DataResponse<Psi>) in
+        
+        
+        let parameters: Parameters = [
+            "date_time": Date().formatterString()!
+        ]
+        
+        Alamofire.request(URL,
+                          method: .get,
+                          parameters: parameters,
+                          encoding: URLEncoding(destination: .queryString),
+                          headers: ["accept": "application/json"]).responseObject { (response: DataResponse<Psi>) in
             let psiData = response.result.value
             completion?(psiData);
         }
